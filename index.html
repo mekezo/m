@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ምሕረታብ: የዝንጀሮ ጓደኛችን!</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for a more playful look */
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter as default, but can be changed */
+            background-color: #fef3c7; /* Light yellow background for a cheerful feel */
+            color: #4a5568; /* Darker text for readability */
+        }
+        .container {
+            max-width: 1200px; /* Max width for content */
+            margin: 0 auto; /* Center the container */
+            padding: 1.5rem; /* Padding inside the container */
+        }
+        .section-card {
+            background-color: #fff; /* White background for sections */
+            border-radius: 1.5rem; /* More rounded corners */
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            margin-bottom: 2rem; /* Space between sections */
+            transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+        }
+        .section-card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem; /* Rounded corners for video */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .btn-primary {
+            background-color: #f59e0b; /* Amber 500 */
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #d97706; /* Amber 600 */
+        }
+        /* Loading spinner styles */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #f59e0b; /* Amber */
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container py-8">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-6xl font-extrabold text-yellow-700 mb-4 rounded-xl p-4 bg-yellow-100 shadow-lg">
+                ምሕረታብን እናስተዋውቃችሁ: የምንወደው የዝንጀሮ ጓደኛችን! 🐒
+            </h1>
+            <p class="text-xl text-gray-600">
+                በቀልድ ስራዎቹ እና በሚያምር ስብዕናው የሚታወቅ እውነተኛ አስደናቂ ፍጡር።
+            </p>
+        </header>
+
+        <!-- About Mihretab Section -->
+        <section class="section-card">
+            <h2 class="text-4xl font-bold text-yellow-800 mb-6">ስለ ሚሕረታብ፣ የምንወደው "ዝንጀሮ"</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <!-- Placeholder image for a monkey. You can replace this with Mihretab's photo! -->
+                    <img src="https://placehold.co/600x400/FFD700/8B4513?text=Mihretab+the+Monkey"
+                         alt="ሚሕረታብን የሚወክል ተጫዋች ዝንጀሮ"
+                         class="w-full h-auto object-cover rounded-xl shadow-md border-4 border-yellow-300">
+                    <p class="text-sm text-gray-500 mt-2 text-center">
+                        (ይህ የመተኪያ ምስል ነው። የምሕረታብን አስደናቂ ፊት እዚህ አስቡት!)
+                    </p>
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed">
+                    <p class="mb-4">
+                        ምሕረታብ፣ ልማድ ያለው እና የማያልቅ ጉልበት ያለው ፍጡር፣ ብዙውን ጊዜ ከጫካው ግርማ ሞገስ ካላቸው ዝንጀሮዎች ጋር ሲነፃፀር ይታያል። ለዛፍ የመወዛወዝ ችሎታው አይደለም (ምንም እንኳን ገና ባናስቀረውም!)፣ ነገር ግን በሚያስደንቅ ቅልጥፍናው፣ በተንኮለኛ ፈገግታው እና በዙሪያው ያሉትን ሁሉ ሳቅ በሚያመጣው ልዩ ችሎታው ነው።
+                    </p>
+                    <p class="mb-4">
+                        በተጨናነቀ ክፍል ውስጥ የመጨረሻውን የፒዛ ቁራጭ በብቃት ሲያገኝም ሆነ ሙዝ በእጁ ይዞ ታላቅ መግቢያ ሲያደርግ፣ ምሕረታብ የደስታ እና ድንገተኛነት መንፈስን ያሳያል። እሱ ሁል ጊዜ እርስዎን በንቃት የሚጠብቅ እና መገኘቱ ጀብዱን የሚያረጋግጥ ጓደኛ ነው።
+                    </p>
+                    <p>
+                        ይህ ድረ-ገጽ ለየት ያለ ውበቱ እና በሕይወታችን ውስጥ ለሚያመጣው ደስታ የቀረበ ትሑት ምስጋና ነው። ለመደሰት ተዘጋጁ!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mihretab's Antics (Video) Section -->
+        <section class="section-card">
+            <h2 class="text-4xl font-bold text-yellow-800 mb-6">የሚሕረታብን አስደናቂ የቀልድ ስራዎች ይመልከቱ!</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                ልክ እንደ ዝንጀሮ ዘመዶቹ፣ ምሕረታብ ለድራማ ፍላጎት እና ለማዝናናት ችሎታ አለው። እዚህ የሚያመጣው የኃይል አይነት ፍንጭ አለ!
+            </p>
+            <div class="video-container shadow-lg">
+                <!-- Embedded YouTube video of a funny monkey. Replace with Mihretab's video! -->
+                <iframe src="https://www.youtube.com/embed/S_A-jY_V-tQ?autoplay=1&mute=1&loop=1&playlist=S_A-jY_V-tQ"
+                        title="አስቂኝ የዝንጀሮ ቪዲዮ"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-sm text-gray-500 mt-4 text-center">
+                (ይህ የመተኪያ ቪዲዮ ነው። የምሕረታብን አስቂኝ ጊዜያት እዚህ ሲጫወቱ አስቡት!)
+            </p>
+        </section>
+
+        <!-- Monkey Wisdom Generator Section -->
+        <section class="section-card">
+            <h2 class="text-4xl font-bold text-yellow-800 mb-6">✨ የሚሕረታብ የዝንጀሮ ጥበብ ✨</h2>
+            <p class="text-lg leading-relaxed mb-4">
+                ከምሕረታብ፣ የጫካው ጥበበኛ፣ ጥበብ የተሞላበት ምክር ይፈልጋሉ? ከታች ባለው ሳጥን ውስጥ አንድ ርዕስ ያስገቡ እና የእሱን ጥበብ ያግኙ!
+            </p>
+            <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mb-6">
+                <input type="text" id="wisdomTopic" placeholder="ለምሳሌ: ጓደኝነት, ሙዝ መብላት, ስንፍና..."
+                       class="flex-grow p-3 border border-yellow-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                <button id="generateWisdomBtn" class="btn-primary flex items-center justify-center">
+                    ጥበብን ፍጠር ✨
+                    <span id="loader" class="loader hidden"></span>
+                </button>
+            </div>
+            <div id="wisdomOutput" class="bg-yellow-50 p-6 rounded-xl shadow-md border-2 border-yellow-200 text-lg italic text-gray-700 min-h-[80px] flex items-center justify-center">
+                <p class="text-center">የምሕረታብ ጥበብ እዚህ ይታያል...</p>
+            </div>
+            <div id="errorMessage" class="text-red-600 mt-2 hidden text-center"></div>
+        </section>
+
+        <!-- Fun Facts/Gallery Section (Optional, for "big website" feel) -->
+        <section class="section-card">
+            <h2 class="text-4xl font-bold text-yellow-800 mb-6">ተጨማሪ የሚሕረታብ ጊዜያት</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example Card 1 -->
+                <div class="bg-yellow-50 p-6 rounded-xl shadow-md text-center">
+                    <img src="https://placehold.co/400x300/FFD700/8B4513?text=Mihretab+Pose+1"
+                         alt="ሚሕረታብ በአስቂኝ አቋቋም"
+                         class="w-full h-48 object-cover rounded-lg mb-4 border-2 border-yellow-200">
+                    <h3 class="text-2xl font-semibold text-yellow-700 mb-2">የሙዝ አንባቢ</h3>
+                    <p class="text-gray-600">አፈ ታሪክ እንደሚለው ሙዝን ከነብር በበለጠ ፍጥነት መላጥ ይችላል።</p>
+                </div>
+                <!-- Example Card 2 -->
+                <div class="bg-yellow-50 p-6 rounded-xl shadow-md text-center">
+                    <img src="https://placehold.co/400x300/FFD700/8B4513?text=Mihretab+Pose+2"
+                         alt="ሚሕረታብ ተንኮለኛ ሲሆን"
+                         class="w-full h-48 object-cover rounded-lg mb-4 border-2 border-yellow-200">
+                    <h3 class="text-2xl font-semibold text-yellow-700 mb-2">የአስመሳይነት ሊቅ</h3>
+                    <p class="text-gray-600">በጣም ስለሚዋሃድ አንዳንድ ጊዜ ከቤት እቃዎች መለየት አይችሉም!</p>
+                </div>
+                <!-- Example Card 3 -->
+                <div class="bg-yellow-50 p-6 rounded-xl shadow-md text-center">
+                    <img src="https://placehold.co/400x300/FFD700/8B4513?text=Mihretab+Pose+3"
+                         alt="ሚሕረታብ ሲያስብ"
+                         class="w-full h-48 object-cover rounded-lg mb-4 border-2 border-yellow-200">
+                    <h3 class="text-2xl font-semibold text-yellow-700 mb-2">ጥልቅ አሳቢ</h3>
+                    <p class="text-gray-600">የዩኒቨርስን ምስጢር... ወይም ደግሞ ለእራት ምን እንደሚበላ እያሰበ ነው።</p>
+                </div>
+            </div>
+            <p class="text-sm text-gray-500 mt-6 text-center">
+                (እነዚህ የመተኪያ ምስሎች ናቸው። ተጨማሪ ክፍሎችን እና የምሕረታብን ትክክለኛ ፎቶዎች ለመጨመር ነፃነት ይሰማዎ!)
+            </p>
+        </section>
+
+        <!-- Call to Action / Share Section -->
+        <section class="section-card text-center">
+            <h2 class="text-3xl font-bold text-yellow-800 mb-4">የሚሕረታብን አስማት ያሰራጩ!</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                ምሕረታብን የምታውቁ ከሆነ የሚያመጣውን ደስታ ታውቃላችሁ። ይህንን ገጽ ያካፍሉ እና ስለ አስደናቂው የዝንጀሮ ጓደኛችን ዓለም እንዲያውቅ ያድርጉ!
+            </p>
+            <button class="btn-primary">በማህበራዊ ሚዲያ ያካፍሉ</button>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="text-center text-gray-500 mt-12 text-sm">
+            <p>© 2025 የሚሕረታብ አድናቂዎች ክለብ። ሁሉም መብቶች የተጠበቁ ናቸው። (በተለይ ሙዞቹ።)</p>
+            <p>ለምሕረታብ በፍቅር እና በጥሩ ቀልድ የተፈጠረ።</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const generateWisdomBtn = document.getElementById('generateWisdomBtn');
+            const wisdomTopicInput = document.getElementById('wisdomTopic');
+            const wisdomOutput = document.getElementById('wisdomOutput');
+            const loader = document.getElementById('loader');
+            const errorMessage = document.getElementById('errorMessage');
+
+            generateWisdomBtn.addEventListener('click', async () => {
+                const topic = wisdomTopicInput.value.trim();
+                if (!topic) {
+                    wisdomOutput.innerHTML = '<p class="text-center text-red-500">እባክዎ ለጥበብ ርዕስ ያስገቡ!</p>';
+                    errorMessage.classList.add('hidden');
+                    return;
+                }
+
+                // Show loader and clear previous output
+                loader.classList.remove('hidden');
+                generateWisdomBtn.disabled = true;
+                wisdomOutput.innerHTML = '<p class="text-center">ጥበብን በማመንጨት ላይ... እባክዎ ይጠብቁ።</p>';
+                errorMessage.classList.add('hidden');
+
+                const prompt = `በአስቂኝ እና በዝንጀሮ-ገጸ-ባህሪይ የተጻፈ ስለ "${topic}" ጥበብ የተሞላበት ምክር ወይም የሕይወት ትምህርት ስጥ። እንደ ዝንጀሮ ተናገር።`;
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Leave as empty string; Canvas will provide at runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`API ስህተት: ${errorData.error.message || response.statusText}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        wisdomOutput.innerHTML = `<p class="text-center">${text}</p>`;
+                    } else {
+                        wisdomOutput.innerHTML = '<p class="text-center text-red-500">ጥበብ ሊመነጭ አልቻለም። እንደገና ይሞክሩ።</p>';
+                        console.error("Unexpected API response structure:", result);
+                    }
+                } catch (error) {
+                    console.error("Error generating wisdom:", error);
+                    wisdomOutput.innerHTML = '<p class="text-center text-red-500">ጥበብን በማመንጨት ላይ ስህተት ተከስቷል።</p>';
+                    errorMessage.textContent = `ስህተት: ${error.message}`;
+                    errorMessage.classList.remove('hidden');
+                } finally {
+                    loader.classList.add('hidden');
+                    generateWisdomBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
